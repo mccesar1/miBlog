@@ -232,14 +232,14 @@ class Migration(migrations.Migration):
                 (
                     "blog",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="apiBlog.blog"
+                        on_delete=django.db.models.deletion.CASCADE, to="api.blog"
                     ),
                 ),
                 (
                     "user",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="apiBlog.profile",
+                        to="api.profile",
                     ),
                 ),
             ],
@@ -250,14 +250,14 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(
                 null=True,
                 on_delete=django.db.models.deletion.SET_NULL,
-                to="apiBlog.profile",
+                to="api.profile",
             ),
         ),
         migrations.AddField(
             model_name="blog",
             name="likes",
             field=models.ManyToManyField(
-                blank=True, related_name="blog_posts", to="apiBlog.profile"
+                blank=True, related_name="blog_posts", to="api.profile"
             ),
         ),
     ]
