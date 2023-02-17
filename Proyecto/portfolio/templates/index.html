@@ -1,0 +1,263 @@
+{% extends 'basic.html' %}
+
+
+
+
+{%load static%}
+{% block body %}
+
+<!-- slider_area_start -->
+<div class="slider_area ">
+    <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-xl-6 col-md-6">
+                    <div class="illastrator_png">
+                        <img src="{% static 'img/banner/edu_ilastration.png' %}" alt="">
+                        
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6">
+                    <div class="slider_info">
+                        <h3>Bienvenido <br>
+                            a mi portafolio <br>
+                            </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- slider_area_end -->
+
+<!-- about_area_start -->
+<div id="sobremi" class="about_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6">
+                <div class="single_about_info">
+                    <h3>Hola mi nombre es César del Río  <br>
+                        </h3>
+                    <p>   
+Soy Ingeniero en Software egresado de la Universidad 
+Autonoma de Chihuahua, terminé la carrera en enero del 2021, tengo 
+experiencia programando con java, Android,  Python y Javascript. 
+Tengo una certificacion de linux y cibersegurid y experiencia en AWS. 
+ <br> Este sitio esta desarrollado con Django y Bootstrap, en una vps de 
+Ubuntu en  AWS, Nginx y Gunicorn como servidor y Supervisor para controlar 
+los procesos, las imagenes se encuentran en un bucket de AWS, 
+soy un apasionado de linux y el codigo libre, me gusta leer sobre filosofia. </p>
+
+                </div>
+            </div>
+
+<!--
+            <div class="col-xl-6 offset-xl-1 col-lg-6">
+                <div class="about_tutorials">
+                    <div class="courses">
+                        <div class="inner_courses">
+                            <div class="text_info">
+                                <span>20+</span>
+                                <p> Courses</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-blue">
+                        <div class="inner_courses">
+                            <div class="text_info">
+                                <span>7638</span>
+                                <p> Videos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-sky">
+                        <div class="inner_courses">
+                            <div class="text_info">
+                                <span>230+</span>
+                                <p> Lessons</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<!-- about_area_end -->
+
+<!-- popular_courses_start -->
+<div id="proyectos"  class="popular_courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-100">
+                    <h3>Mis Proyectos</h3>
+                    <p>Estos son algunos de mis proyectos desarrollados en python y java 	</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="all_courses">
+        <div class="container">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+         {% for proyecto in proyectos %}
+                    <div class="col-xl-4 col-lg-4 col-md-6 ">
+                        <div class="single_courses border">
+                            <div class="thumb">
+                                <a href="{{proyecto.url}}">
+                                    <img src="{{proyecto.image.url}}"" alt="" style="height:15em;">
+
+                                </a>
+                            </div>
+                            <div class="courses_info">
+                              <span><b></b></span>
+                             
+				
+				<h3>
+                              
+				<a href="{{proyecto.url}}">{{proyecto.title}}</a>
+				
+				</h3>
+		
+                                <div class="star_prise d-flex justify-content-between">
+                                    <div class="icon">
+                                        <i class="ti-github"></i>
+                                            <h7>{{proyecto.description}}</h7>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-xl-12">
+                        <div class="more_courses text-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popular_courses_end-->
+
+<!-- our_courses_start -->
+<div class="our_courses" id="habilidades">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-100">
+                    <h3>HABILIDADES</h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-md-6 col-lg-6">
+                <div class="single_course text-center">
+                    <div class="icon">
+                        <i class="ti-desktop"></i>
+                    </div>
+                    <h3>Backend</h3>
+                    <p>
+                        Programación en Python y el framework Django, Aplicaciones Android con java y Firebase 
+                    </p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-lg-6">
+                <div class="single_course text-center">
+                    <div class="icon blue">
+                        <i class="ti-linux"></i>
+                    </div>
+                    <h3>LINUX</h3>
+                    <p>
+                        Tengo una certificación de linux y experiencia usando diferentes distribuciones.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-lg-6">
+                <div class="single_course text-center">
+                    <div class="icon">
+                        <i class="ti-unlock"></i>
+                    </div>
+                    <h3>Ciberseguridad</h3>
+                    <p>
+                        Tengo una certificación en ciberseguridad y experiencia trabajando con las diferentes herramientas de Kali Linux 
+                    </p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-lg-6">
+                <div class="single_course text-center">
+                    <div class="icon gradient">
+                        
+                       <i class="ti-cloud"></i>
+			</div>
+                    <h3>AWS</h3>
+                    <p>
+                        Experiencia haciendo despliegue de sitios web en aws usando EC2 y Buckets
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- our_courses_end -->
+   
+<div  class="popular_courses" id="certificaciones">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-100">
+                    <h3>Mis Certificaciones</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="all_courses" >
+        <div class="container">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+         {% for certificacion in certificaciones %}
+                    <div class="col-xl-4 col-lg-4 col-md-6 ">
+                        <div class="single_courses border">
+                            <div class="thumb">
+                                
+                                    <img src="{{certificacion.image.url}}"" alt="" styl>
+
+
+                                </a>
+                            </div>
+                            <div class="courses_info">
+                              
+                             <h3><a href="{{proyecto.url}}">{{certificacion.title}}</a></h3>
+                                <div class="star_prise d-flex justify-content-between">
+                                    <div class="star">
+                                        <i class="flaticon-mark-as-favorite-star"></i>
+					 <h7>{{certificacion.description}}</h7>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-xl-12">
+                        <div class="more_courses text-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}
